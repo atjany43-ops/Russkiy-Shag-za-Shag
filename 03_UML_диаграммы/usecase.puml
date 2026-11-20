@@ -1,0 +1,25 @@
+@startuml
+title Диаграмма вариантов использования: «Русский шаг за шагом»
+left to right direction
+
+actor "Пользователь\n(иностранный студент)" as U
+
+rectangle "Приложение «Русский шаг за шагом»" {
+  usecase "Выбрать урок\nи пройти его" as UC1
+  usecase "Просмотреть карточку\nслова" as UC2
+  usecase "Прослушать произношение\nслова" as UC3
+  usecase "Показать письменный\nтекст к аудио" as UC3a
+  usecase "Пройти тест" as UC4
+  usecase "Просмотреть результаты\nтеста" as UC5
+  usecase "Посмотреть прогресс" as UC6
+}
+
+U --> UC1
+U --> UC2
+U --> UC3
+U --> UC4
+U --> UC5
+U --> UC6
+
+UC3 ..> UC3a : <<include>>
+@enduml
